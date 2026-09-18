@@ -1,27 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1wip5j6e6jc8"]
+[gd_scene load_steps=5 format=3 uid="uid://c1wip5j6e6jc8"]
 
 [ext_resource type="Script" path="res://scripts/paddle.gd" id="1_yttkb"]
 [ext_resource type="Texture2D" uid="uid://dpeq3jmsfg22k" path="res://assets/img/FlipperSprite.png" id="2_cjfkd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1onsu"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77l32"]
+size = Vector2(77, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1ekx"]
+radius = 10.2956
 
 [node name="Flipper" type="Node2D"]
 script = ExtResource("1_yttkb")
 
 [node name="FlipperBody" type="RigidBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="FlipperBody"]
 position = Vector2(24, 0)
 texture = ExtResource("2_cjfkd")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlipperBody"]
-position = Vector2(38, 12)
-polygon = PackedVector2Array(-35, 3, 26, 3, 26, -6, -35, -27)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlipperBody"]
-shape = SubResource("CircleShape2D_1onsu")
+position = Vector2(24.5, -3.5)
+shape = SubResource("RectangleShape2D_77l32")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 gizmo_extents = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_m1ekx")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../FlipperBody")
+node_b = NodePath("../StaticBody2D")

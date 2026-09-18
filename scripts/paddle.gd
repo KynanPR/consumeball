@@ -15,6 +15,7 @@ var targetAngle: float
 var input_action: String
 
 func _ready() -> void:
+	get_tree().debug_collisions_hint = true
 	#Store Starting Angle
 	restAngle = flipper.rotation
 	

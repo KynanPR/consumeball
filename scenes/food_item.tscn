@@ -12,20 +12,18 @@ radius = 5.0
 
 [node name="food_item" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_i3jmm")
 gravity_scale = 0.5
 linear_damp = 0.2
 script = ExtResource("1_py4m6")
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
 texture = ExtResource("1_beew7")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
-scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_xyori")
 debug_color = Color(0.813817, 0.355822, 0.530158, 0.42)
