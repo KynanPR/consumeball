@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxlvefviq2y15"]
 
-[ext_resource type="Texture2D" uid="uid://b47ydqq4l531l" path="res://assets/atlas_food.tres" id="1_beew7"]
+[ext_resource type="Texture2D" path="res://assets/atlas_food.tres" id="1_beew7"]
 [ext_resource type="Script" path="res://scripts/food_item.gd" id="1_py4m6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i3jmm"]

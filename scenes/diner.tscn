@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2bmhhokrrxls"]
+
+[ext_resource type="Script" path="res://scripts/diner.gd" id="1_0iofh"]
+[ext_resource type="Texture2D" uid="uid://msp2ai7ids0" path="res://assets/Diners/16x16/16x16 Idle-Sheet.png" id="1_xn5qr"]
+[ext_resource type="Texture2D" path="res://assets/atlas_food.tres" id="3_xtofy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aofvx"]
+size = Vector2(14, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ajd"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(0, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txqjg"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(24, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfgmv"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(48, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrelv"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(72, 0, 24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt3a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ajd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txqjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfgmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrelv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Diner" type="Node2D"]
+script = ExtResource("1_0iofh")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_aofvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area"]
+sprite_frames = SubResource("SpriteFrames_tt3a3")
+
+[node name="Current food sprite" type="Sprite2D" parent="area"]
+position = Vector2(-0.5, -1)
+scale = Vector2(0.8, 0.791)
+texture = ExtResource("3_xtofy")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
