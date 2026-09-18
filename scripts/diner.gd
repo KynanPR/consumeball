@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_body_entered(body: Food_Item) -> bool:
+	print("here")
 	if (body.get_food_type() == current_food):
 		body.queue_free()
 		change_current_food()

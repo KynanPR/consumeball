@@ -6,7 +6,7 @@ const m_max_food_items: int = 5
 var m_active_food_items: Array[Food_Item]
 @onready var m_spawn_timer: Timer = $Timer
 var m_spawn_interval: float = 1.0
-@export var m_spawn_location: Vector2 = Vector2(500, 250)
+@export var m_spawn_location: Vector2 = Vector2(150, 0)
 
 
 # Called when the node enters the scene tree for the first time.

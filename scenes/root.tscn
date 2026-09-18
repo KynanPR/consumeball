@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuvvl3buh348t"]
 
 [ext_resource type="Texture2D" uid="uid://bkgiwb2gfrb1i" path="res://assets/img/flat,800x800,075,f.u1.jpg" id="1_1pjhx"]
-[ext_resource type="PackedScene" uid="uid://bxlvefviq2y15" path="res://scenes/food_item.tscn" id="2_8w7os"]
 [ext_resource type="Script" path="res://scripts/food_controller.gd" id="4_tnmtd"]
 [ext_resource type="PackedScene" uid="uid://c1wip5j6e6jc8" path="res://scenes/Flipper.tscn" id="5_5ajad"]
 [ext_resource type="Script" path="res://scripts/despawn_area.gd" id="5_dgn3y"]
+[ext_resource type="PackedScene" uid="uid://dhghkq3kf5xnl" path="res://scenes/diner.tscn" id="6_kattb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obsxu"]
 size = Vector2(2217, 268)
@@ -14,16 +14,16 @@ size = Vector2(2217, 268)
 [node name="Background" type="TileMapLayer" parent="."]
 position = Vector2(1280, 720)
 
-[node name="camera" type="Camera2D" parent="."]
-anchor_mode = 0
-
 [node name="Flat,800x800,075,f_u1" type="Sprite2D" parent="."]
-position = Vector2(639.5, 362.5)
-scale = Vector2(1.60375, 0.91125)
+position = Vector2(197.5, 198)
+scale = Vector2(0.49875, 0.5)
 texture = ExtResource("1_1pjhx")
 
-[node name="food_item" parent="." instance=ExtResource("2_8w7os")]
-position = Vector2(358, 238)
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(-3, -1.99997)
+scale = Vector2(0.941839, 1.49446)
+anchor_mode = 0
+enabled = false
 
 [node name="food_controller" type="Node2D" parent="."]
 script = ExtResource("4_tnmtd")
@@ -40,6 +40,9 @@ position = Vector2(485.5, 940)
 shape = SubResource("RectangleShape2D_obsxu")
 
 [node name="Flipper" parent="." instance=ExtResource("5_5ajad")]
-position = Vector2(464, 513)
+position = Vector2(132, 323)
+
+[node name="Diner" parent="." instance=ExtResource("6_kattb")]
+position = Vector2(297, 121)
 
 [connection signal="body_entered" from="despawn_area" to="food_controller" method="_on_despawn_area_body_entered"]
