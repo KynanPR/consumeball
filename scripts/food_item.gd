@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+
 
 func get_food_type() -> Food_Type:
 	return m_foodType
