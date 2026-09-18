@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxlvefviq2y15"]
+[gd_scene load_steps=5 format=3 uid="uid://bxlvefviq2y15"]
 
 [ext_resource type="Texture2D" uid="uid://b47ydqq4l531l" path="res://assets/atlas_food.tres" id="1_beew7"]
 [ext_resource type="Script" path="res://scripts/food_item.gd" id="1_py4m6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i3jmm"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xyori"]
 radius = 5.0
 
 [node name="food_item" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_i3jmm")
 gravity_scale = 0.5
 script = ExtResource("1_py4m6")
 
