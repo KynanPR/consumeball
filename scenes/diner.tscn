@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2bmhhokrrxls"]
+[gd_scene load_steps=9 format=3 uid="uid://b2bmhhokrrxls"]
 
+[ext_resource type="Script" path="res://scripts/diner.gd" id="1_0iofh"]
 [ext_resource type="Texture2D" uid="uid://msp2ai7ids0" path="res://assets/Diners/16x16/16x16 Idle-Sheet.png" id="1_xn5qr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aofvx"]
@@ -42,6 +43,7 @@ animations = [{
 }]
 
 [node name="Diner" type="Node2D"]
+script = ExtResource("1_0iofh")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
