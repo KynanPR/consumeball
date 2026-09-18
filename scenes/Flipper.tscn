@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1wip5j6e6jc8"]
+
+[ext_resource type="Script" path="res://scripts/paddle.gd" id="1_yttkb"]
+[ext_resource type="Texture2D" uid="uid://dpeq3jmsfg22k" path="res://assets/img/FlipperSprite.png" id="2_cjfkd"]
+
+[node name="Flipper" type="Node2D"]
+script = ExtResource("1_yttkb")
+
+[node name="FlipperBody" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlipperBody"]
+
+[node name="Sprite2D" type="Sprite2D" parent="FlipperBody"]
+texture = ExtResource("2_cjfkd")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-23, 1)
+gizmo_extents = 0.0
