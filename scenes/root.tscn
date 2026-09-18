@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://cuvvl3buh348t"]
 
 [ext_resource type="Texture2D" uid="uid://bkgiwb2gfrb1i" path="res://assets/img/flat,800x800,075,f.u1.jpg" id="1_1pjhx"]
@@ -7,12 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dwde"]
 size = Vector2(244, 51)
-=======
-[gd_scene load_steps=3 format=3 uid="uid://cuvvl3buh348t"]
-
-[ext_resource type="Texture2D" uid="uid://bkgiwb2gfrb1i" path="res://assets/img/flat,800x800,075,f.u1.jpg" id="1_1pjhx"]
-[ext_resource type="PackedScene" uid="uid://b2bmhhokrrxls" path="res://scenes/diner.tscn" id="2_6ipfg"]
->>>>>>> 461f403830a231615b02bf41f6070b50c718e14f
 
 [node name="root" type="Node"]
 
@@ -27,7 +20,6 @@ position = Vector2(639.5, 362.5)
 scale = Vector2(1.60375, 0.91125)
 texture = ExtResource("1_1pjhx")
 
-<<<<<<< HEAD
 [node name="food_item" parent="." instance=ExtResource("2_8w7os")]
 position = Vector2(358, 238)
 
@@ -43,7 +35,3 @@ shape = SubResource("RectangleShape2D_1dwde")
 position = Vector2(0.5, -2)
 scale = Vector2(1.92969, 0.40625)
 texture = ExtResource("3_ygwyi")
-=======
-[node name="Diner" parent="." instance=ExtResource("2_6ipfg")]
-position = Vector2(336, 100)
->>>>>>> 461f403830a231615b02bf41f6070b50c718e14f
