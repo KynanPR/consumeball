@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuvvl3buh348t"]
+[gd_scene load_steps=3 format=3 uid="uid://cuvvl3buh348t"]
 
 [ext_resource type="Texture2D" uid="uid://bkgiwb2gfrb1i" path="res://assets/img/flat,800x800,075,f.u1.jpg" id="1_1pjhx"]
+[ext_resource type="PackedScene" uid="uid://b2bmhhokrrxls" path="res://scenes/diner.tscn" id="2_6ipfg"]
 
 [node name="root" type="Node"]
 
@@ -14,3 +15,6 @@ anchor_mode = 0
 position = Vector2(639.5, 362.5)
 scale = Vector2(1.60375, 0.91125)
 texture = ExtResource("1_1pjhx")
+
+[node name="Diner" parent="." instance=ExtResource("2_6ipfg")]
+position = Vector2(336, 100)

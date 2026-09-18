@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2bmhhokrrxls"]
+
+[ext_resource type="Texture2D" uid="uid://msp2ai7ids0" path="res://assets/Diners/16x16/16x16 Idle-Sheet.png" id="1_xn5qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aofvx"]
+size = Vector2(14, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ajd"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(0, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txqjg"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(24, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfgmv"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(48, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrelv"]
+atlas = ExtResource("1_xn5qr")
+region = Rect2(72, 0, 24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt3a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ajd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txqjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfgmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrelv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Diner" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_aofvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_tt3a3")
