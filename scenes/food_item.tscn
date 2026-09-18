@@ -11,8 +11,11 @@ bounce = 1.0
 radius = 5.0
 
 [node name="food_item" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_i3jmm")
 gravity_scale = 0.5
+linear_damp = 0.2
 script = ExtResource("1_py4m6")
 
 [node name="sprite" type="Sprite2D" parent="."]
