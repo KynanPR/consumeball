@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cuvvl3buh348t"]
-
-[node name="root" type="Node"]
-
-[node name="Background" type="TileMapLayer" parent="."]
-position = Vector2(1280, 720)
