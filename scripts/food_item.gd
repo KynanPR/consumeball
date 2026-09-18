@@ -9,6 +9,7 @@ var m_foodType: Food_Type
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	m_foodType = Food_Type.apple
 	pass # Replace with function body.
 
 

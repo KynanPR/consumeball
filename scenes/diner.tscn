@@ -45,11 +45,13 @@ animations = [{
 [node name="Diner" type="Node2D"]
 script = ExtResource("1_0iofh")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_aofvx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area"]
 sprite_frames = SubResource("SpriteFrames_tt3a3")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

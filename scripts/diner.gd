@@ -1,7 +1,7 @@
 extends Node2D
 enum desired_food {apple, pizza}
 
-var current_food = desired_food.apple
+var current_food = desired_food.pizza
 
 func change_current_food() -> void:
 	if (current_food == desired_food.apple):
@@ -23,10 +23,12 @@ func _process(delta: float) -> void:
 
 
 func _on_area_body_entered(body: Food_Item) -> bool:
+	print("here")
 	if (body.get_food_type() == current_food):
+		body.queue_free()
 		return true
 		pass
-	else: if (body.get_food_type() != current_food):
+	else:
 		return false
 		pass
-	return false
+	
