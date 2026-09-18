@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b47ydqq4l531l"]
+
+[ext_resource type="Texture2D" uid="uid://3i0pylw8vd8h" path="res://assets/img/ss_foods.png" id="1_eyox6"]
+
+[resource]
+atlas = ExtResource("1_eyox6")
+filter_clip = true
